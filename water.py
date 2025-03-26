@@ -1,16 +1,9 @@
 import jax
-# from jax.config import config
-# jax.config.update("jax_debug_nans", True)
 jax.config.update("jax_enable_x64", True)
+jax.config.update("jax_debug_nans", True)
 import jax.numpy as jnp
-from jax import lax, random, jit, vmap
-from functools import partial
-from jax.scipy.stats import norm
-from jax.example_libraries import optimizers
+from jax import random, vmap
 from jax.example_libraries.stax import Dense, Relu, serial
-import numpy as np
-import matplotlib.pyplot as plt
-# from IPython import display
 
 import pandas as pd
 import optax
@@ -84,8 +77,8 @@ def harmonic_potential(tau, u0):
 
 def make_error_loss(flow_forward, data_file):
     data = pd.read_csv(data_file, sep='\s+')
-    inputs = jnp.array([[r1, r2, jnp.cos(theta*jnp.pi/180)] for r1, r2, theta in zip(data["r1"], data["r2"], data["theta"])])
-    energy = jnp.array(data["energy"])
+    inputs = jnp.array([[jnp.exp(-r1), jnp.exp(-r2), jnp.cos(theta*jnp.pi/180)] for r1, r2, theta in zip(data["r1"], data["r2"], data["theta"])])
+    energy = jnp.array(data["energy"]) + 76
     batch_decoupled_energy = vmap(harmonic_potential, (0, None), 0)
 
     def loss(params, u0):
@@ -99,7 +92,7 @@ def make_error_loss(flow_forward, data_file):
 batchsize = 8192
 n = 1
 dim = 3
-nlayers = 10
+nlayers = 3
 rng = random.PRNGKey(42)
 
 def transform(rng, cutoff: int, other: int):
@@ -116,11 +109,11 @@ params, flow_forward, flow_inverse = flow_init(init_rng, 3)
 loss = make_error_loss(flow_forward, "/Users/longli/pycode/ml4p/projects/h2opes/h2opes.txt")
 value_and_grad = jax.value_and_grad(loss, argnums=(0, 1), has_aux=False)
 
-params_optimizer = optax.adam(0.05)
+params_optimizer = optax.adam(0.01)
 params_opt_state = params_optimizer.init(params)
 
 u0 = 0.0
-u0_optimizer = optax.adam(0.05)
+u0_optimizer = optax.adam(0.01)
 u0_opt_state = u0_optimizer.init(u0)
 
 @jax.jit
