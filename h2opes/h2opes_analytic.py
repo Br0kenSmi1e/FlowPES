@@ -305,8 +305,8 @@ batch_water_pes = jax.vmap(water_pes)
 def make_data():
     with open("h2opes_analytic.txt", "w") as f:
         f.write(",theta,r1,r2,energy\n")
-    r_list = jnp.arange(0.8, 1.2, 0.01)
-    t_list = jnp.arange(60, 180) * jnp.pi / 180
+    r_list = jnp.arange(0.8, 1.2, 0.02)
+    t_list = jnp.arange(60, 180, 5) * jnp.pi / 180
     ndata = 0
     for theta in t_list:
         for r1 in r_list:
@@ -315,6 +315,7 @@ def make_data():
                 with open("h2opes_analytic.txt", "a") as f:
                     f.write(f"{ndata},{theta},{r1:.3f},{r2:.3f},{energy}\n")
                 ndata += 1
+            print(ndata)
     return ndata
 
 make_data()
