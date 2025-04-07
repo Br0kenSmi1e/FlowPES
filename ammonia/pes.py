@@ -62,4 +62,4 @@ def ammonia_pes_(r1, r2, r3, a1, a2, a3):
     f24a4a4b = jnp.sqrt(1/2) * (-1521 - 13132 * srd)
     v4 = f1111 * xi1 ** 4 + f1113 * xi1 ** 3 * xi3 + f1133 * xi1 ** 2 * xi3 ** 2 + f1123 * xi1 ** 2 * xi2 * xi3 + f114a4a * xi1 ** 2 * xi4a ** 2 + f224a4b * xi2 ** 2 * xi4a * xi4b + f134a4a * xi1 * xi3 * xi4a ** 2 + f134a4b * xi1 * xi3 * xi4a * xi4b + f1114a * xi1 ** 3 * xi4a + f4a4a4a4a * xi4a ** 4 + f1134a * xi1 ** 2 * xi3 * xi4a + f1124b * xi1 ** 2 * xi2 * xi4b + f14a4a4a * xi1 * xi4a ** 3 + f24a4a4b * xi2 * xi4a ** 2 * xi4b
 
-    return ve + v0 + v1 + v2 + v3 + v4
+    return v0 + v1 + v2 + v3 + v4
