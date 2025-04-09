@@ -1,0 +1,51 @@
+ H3 4s/3p T={10,}2 {?,}39-ref points, with distant random 4th H-atom ==> H4          Efinal = Eex + DTS - f(N)*|Ddc|/sumC*C - DbasL
+ ================================================================================    Efinal = Eex + DTS - f(N)*|Ddc|/sumC*C - DbasL
+ S = SCF-type:
+   "C","L","d","c" = closed T10,T2,T.4,T0; "o","p","P","O" = open...; "b","B","h","H" = mixed...: our computations, H4,H3,H2,H2-He.
+   "D","E","l","1" = root 1 closed T10,T2,T.4,T0; "I","J","[","2"  "i","j","]","3"  "A","<","!","4"  "#",">","|","5" = roots 2-5...;
+   "Q","q","0","6" = root 1  open  T10,T2,T.4,T0; "N","G","(","7"  "r","s",")","8"  "@","&","+","9"  "$","^","=","_" = roots 2-5...;
+   "M","T","x",";" = root 1 mixed  T10,T2,T.4,T0; "V","u","{","`"  "v","w","}",","  "y","*","/",":"  "%","?","~","." = roots 2-5...;
+   "W" = Schwenke mostly two-molecule H4; "K" = Schaefer & Kohler rigid-rotor van der Waals H4, "k" = same with 22.5 degree angles,
+   "F" = van der Waals H4 generated from Schaefer & Kohler by varying r1 & r2 (shifting R and V2 terms to match ab initio smoothly),
+   "f" = same with more extreme variation of r1 & r2; "Y" = very compact H4 points generated from the London formula;
+ [ "U" = Burton & Senff van der Waals H4, "n" = Senff & Burton H4, "R" = H4 got from Burton&Senff,Senff&Burton by varying r1 & r2; ]
+   "S" = Liu (linear) H3, "e" = Siegbahn & Liu H3, "m" = Blomberg & Liu H3, "a" = Bauschlicher, Langhoff, & Partridge H3;
+   "-" = Partridge et al. H3, "Z" = Partridge et al. MTT-formula-generated van der Waals H3, "z" = same with extreme values of r1;
+   "t" = Truhlar & Horowitz set-force-constants H3; "X" = very compact H3 points generated from the London formula;
+   "g" = Gengenbach-generated[eq.(18),(19a):V0=BMSV,V2=DHR] [similar to Truhlar & Horowitz: eq.(17)] van der Waals H3.
+ Nabs = conformation I.D.; geometry (bohrs) Z1 = -A/2, Z2 = A/2, X1=Y1=X2=Y2=X3=0; f(N) = lambdaDC, Davidson correction parameter;
+ sumC*C = sum of reference C**2; Eex = Elambda(T) (hartrees), energy extrapolated to zero-T; dEl34 = Elambda(3T)+Elambda(4T)-2*Eex;
+ dE(T) = E(T)-Eex; DTS = Threshold + SCF-type correction; |Ddc| = abs{(1-sumC*C)*[E(MRDCI)-Eref]}; DbasL = London basis correction;
+ ijk lmn = geometry indices (not unique, have varying meanings); note that for H4, all six indices are present; for H3, lmn are left
+             blank; and for H2-He, lmn is replaced by "H2He" (the last atom is the He atom).
+                                                                                             (------in microhartrees------)
+  Nabs ijk lmn   A/2       Y3       Z3       X4        Y4        Z4    S f(N) sumC*C    Eex   dEl34 dE(T)  DTS  |Ddc| DbasL  Efinal
+ ----- -=-==-= -------- -------- -------- -------- --------- --------- - --- ------- -------- ----- ----- ----- ----- ----- --------
+ 89006 404     0.875000 0.000000 2.625000                              p .01 .984638 -.155362  -174   435   109   570  3891 -.159149
+ 89010 505     1.150000 0.000000 3.450000                              p .01 .985010 -.126610     2   215    -8   412  3666 -.130289
+ 89170 314     0.690000 0.870000 2.196884                              p .01 .983953 -.142265    -4   863    12   682  4062 -.146322
+ 89178 315     0.765000 1.085000 2.644275                              p .01 .983739 -.156424   -67   715    20   623  3960 -.160370
+ 89182 216     0.450000 1.320000 2.736307                              p .01 .986202 -.065291   119   701   -30   591  4023 -.069350
+ 89207 223     0.500000 1.212436 1.200000                              p .01 .983023 -.022534   115   821   -36   874  4914 -.027492
+ 89235 326     0.725000 2.424871 2.125000                              p .01 .984494 -.160628    16   640   -11   568  3813 -.164458
+ 89253 525     1.050000 2.100000 1.050000                              p .01 .984972 -.117334  -163   448    65   468  4686 -.121959
+ 89284 434     0.950000 1.645448 0.000000                              p .01 .983977 -.069131  -105   538    26   585  5173 -.074284
+ 89286 535     1.050000 1.818653 0.000000                              p .01 .984043 -.068623  -109   532    71   531  4909 -.073466
+ 99410 232     0.588120 1.125497 0.246361                              p .01 .985025  .029266   -16   480     4   712  5796  .023467
+ 99411 334     0.700554 1.417295 0.000000                              p .01 .984167 -.053365   102   383   -26   685  5587 -.058984
+ 99412 335     0.700554 1.889727 0.000000                              p .01 .983243 -.107075   -27   405     7   708  5213 -.112289
+ 99413 336     0.700554 2.362158 0.000000                              p .01 .983687 -.136117    -3   337     1   652  4562 -.140685
+ 99414 337     0.700554 2.834590 0.000000                              p .01 .984425 -.152458    13   289    -3   588  3985 -.156453
+ 99415 435     0.944863 1.889727 0.000000                              p .01 .983565 -.088429    14   400    -4   583  5123 -.093562
+ 99416 333     0.708648 1.227413 0.000000                              p .01 .985166 -.019529   -33   347     8   637  5583 -.025110
+ 99417 535     1.181079 2.045689 0.000000                              p .01 .985210 -.061238   -70   413    18   419  4513 -.065738
+ 99418 636     1.417295 2.454827 0.000000                              p .01 .987598 -.042141    30   447    -7   244  3724 -.045875
+ 99419 132     0.300000 0.953939 0.000000                              p .01 .988679  .561893    -4   732     1   540  5810  .556079
+ 99420 112     0.300000 0.841014 0.841014                              p .01 .984447  .481428   103  1065   -26   908  5113  .476280
+ 99421 102     0.300000 0.000000 1.300000                              p .01 .987831  .465853  -156   744    39   584  4533  .461353
+ 99422 131     0.400000 0.692820 0.000000                              p .01 .991892  .532636   -10   167     3   325  8210  .524425
+ 99423 101     0.400000 0.000000 1.200000                              p .01 .988275  .326669   -56   389    14   543  4737  .321940
+ 99424 103     0.300000 0.000000 1.700000                              p .01 .986719  .346157    -8   661     2   622  5212  .340941
+ 99425 106     0.300000 0.000000 2.900000                              p .01 .989672  .253283     3   509    -1   384  5779  .247499
+ 99426 103     0.400000 0.000000 1.900000                              p .01 .986034  .066238  -108   657    27   630  4467  .061792
+ 99427 133     0.400000 1.445683 0.000000                              p .01 .985105  .119081    33   546    -8   764  5626  .113439
